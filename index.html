@@ -40,6 +40,18 @@
               aria-label="Background overlay transparency"
             />
           </label>
+          <label class="opacity-control">
+            <span>morph</span>
+            <input
+              type="range"
+              id="morph-speed"
+              min="0"
+              max="200"
+              step="5"
+              value="100"
+              aria-label="Animation clock speed"
+            />
+          </label>
         </div>
       </div>
     </nav>
@@ -141,6 +153,7 @@
     (function () {
       var toggleBtn = document.getElementById('content-toggle');
       var opacitySlider = document.getElementById('overlay-opacity');
+      var morphSlider = document.getElementById('morph-speed');
       var body = document.body;
       var root = document.documentElement;
 
@@ -152,6 +165,10 @@
 
       opacitySlider.addEventListener('input', function () {
         root.style.setProperty('--overlay-alpha', opacitySlider.value / 100);
+      });
+
+      morphSlider.addEventListener('input', function () {
+        window.speed = morphSlider.value / 100;
       });
     })();
   </script>
