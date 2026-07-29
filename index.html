@@ -13,9 +13,9 @@
 
   <header class="site-header">
     <nav class="nav">
-      <div role="heading" aria-level="1">
+      <!-- <div role="heading" aria-level="1">
         <a class="brand" href="#hero">Hi, I'm Lance</a>
-      </div>
+      </div> -->
       <div class="nav-right">
         <!-- <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -46,12 +46,14 @@
               type="range"
               id="morph-speed"
               min="0"
-              max="200"
+              max="150"
               step="5"
               value="100"
               aria-label="Animation clock speed"
             />
           </label>
+
+          <span class="eyes-emoji" aria-hidden="true">👀</span>
         </div>
       </div>
     </nav>
@@ -60,9 +62,19 @@
   <main>
     <section id="hero" class="section hero">
       <div class="hero-content">
-        <img class="hero-photo" src="assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
+          <svg class="hero-photo-arc" viewBox="0 0 240 240" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+            <path id="hero-photo-arc-path" d="M 12,120 A 108,108 0 0 1 228,120" fill="none" />
+            <text>
+              <textPath href="#hero-photo-arc-path" xlink:href="#hero-photo-arc-path" startOffset="50%" text-anchor="middle">
+                Hi, I'm Lance
+              </textPath>
+            </text>
+          </svg>
+        </div>
         <div class="hero-text">
-          <p class="tagline">I’m a software engineer with a rich technical and creative background. I love to bring a project to life and give ideas wings, legs, or whatever they might need to fulfill that new life. 
+          <p class="tagline">I’m a software engineer with a rich technical and creative background. I love to bring a project to life and give ideas wings, legs, or whatever it might need. 
 </p>
           <div class="hero-links">
             <a href="mailto:lancehowardsimmons@gmail.com">Email me</a>

@@ -122,10 +122,7 @@ body.content-hidden .site-footer {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 1rem;
+  padding: 0.1rem;
 }
 
 .nav {
@@ -133,10 +130,10 @@ body.content-hidden .site-footer {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 0.75rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.25rem 0;
 }
 
 .brand {
@@ -190,12 +187,37 @@ main {
   gap: 1.25rem;
 }
 
+.hero-photo-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
 .hero-photo {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
+  display: block;
+}
+
+.hero-photo-arc {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  transform: rotate(-30deg);
+}
+
+.hero-photo-arc text {
+  fill: var(--text-primary);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .hero-text {
@@ -208,8 +230,8 @@ main {
 }
 
 .tagline {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-size: 1rem;
   margin: 0;
 }
 
