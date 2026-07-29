@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Your Name] — Developer Portfolio</title>
+  <meta name="description" content="Portfolio and resume for [Your Name], [Your Title]." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="hydra-bg" aria-hidden="true"></canvas>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div role="heading" aria-level="1">
+        <a class="brand" href="#hero">Hi, I'm Lance</a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="display-controls">
+          <button id="content-toggle" class="content-toggle" type="button" aria-pressed="false">
+            gaze
+          </button>
+          <label class="opacity-control">
+            <span>screen</span>
+            <input
+              type="range"
+              id="overlay-opacity"
+              min="0"
+              max="90"
+              step="1"
+              value="55"
+              aria-label="Background overlay transparency"
+            />
+          </label>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="hero-content">
+        <img class="hero-photo" src="assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
+        <div class="hero-text">
+          <p class="tagline">I’m a software engineer with a rich technical and creative background. I have experience in web accessibility remediation and both hardware and software quality control. I relish both the broad strokes and the detailed work. I’m looking for a role where I can utilize my copious energy, skills, and experience to create solutions for worthy projects.
+</p>
+          <div class="hero-links">
+            <a href="mailto:lancehowardsimmons@gmail.com">Email me</a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>[Write a short 2–3 sentence bio here — who you are, what you build, and what you care about as a developer.]</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="tag-list">
+        <li>[Language/Tech]</li>
+        <li>[Language/Tech]</li>
+        <li>[Language/Tech]</li>
+        <li>[Language/Tech]</li>
+        <li>[Language/Tech]</li>
+        <li>[Language/Tech]</li>
+      </ul>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h3>[Job Title]</h3>
+          <span class="entry-dates">[Start Date] — [End Date]</span>
+        </div>
+        <p class="entry-org">[Company Name]</p>
+        <ul>
+          <li>[Describe a key responsibility or achievement]</li>
+          <li>[Describe a key responsibility or achievement]</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h3>[Job Title]</h3>
+          <span class="entry-dates">[Start Date] — [End Date]</span>
+        </div>
+        <p class="entry-org">[Company Name]</p>
+        <ul>
+          <li>[Describe a key responsibility or achievement]</li>
+          <li>[Describe a key responsibility or achievement]</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>[Project Name]</h3>
+          <p>[Describe the project here — what it does and why it's interesting.]</p>
+          <p class="project-tech">[Tech used]</p>
+          <a href="#" target="_blank" rel="noopener">View project →</a>
+        </article>
+        <article class="project-card">
+          <h3>[Project Name]</h3>
+          <p>[Describe the project here — what it does and why it's interesting.]</p>
+          <p class="project-tech">[Tech used]</p>
+          <a href="#" target="_blank" rel="noopener">View project →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>[Add a short line inviting people to reach out.]</p>
+      
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; [Year] [Your Name]. Built with HTML, CSS, and <a href="https://hydra.ojack.xyz/" target="_blank" rel="noopener">Hydra</a>.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
+  <script src="script-custom.js"></script>
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById('content-toggle');
+      var opacitySlider = document.getElementById('overlay-opacity');
+      var body = document.body;
+      var root = document.documentElement;
+
+      toggleBtn.addEventListener('click', function () {
+        var hidden = body.classList.toggle('content-hidden');
+        toggleBtn.textContent = hidden ? 'read' : 'gaze';
+        toggleBtn.setAttribute('aria-pressed', String(hidden));
+      });
+
+      opacitySlider.addEventListener('input', function () {
+        root.style.setProperty('--overlay-alpha', opacitySlider.value / 100);
+      });
+    })();
+  </script>
+</body>
+</html>
