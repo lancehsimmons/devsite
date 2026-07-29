@@ -5,7 +5,7 @@
   --panel-border: rgba(255, 255, 255, 0.08);
   --text-primary: #f2f3f7;
   --text-secondary: #b7bccb;
-  --accent: #6dd74a;
+  --accent: #71b0f4;
   --accent-2: #b78cf0;
   --max-width: 780px;
 }
@@ -81,8 +81,8 @@ body.static-bg::before {
 }
 
 .content-toggle {
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
+  padding: 0.1rem 0.35rem;
+  border-radius: 10px;
   border: 1px solid var(--panel-border);
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-primary);
@@ -296,6 +296,10 @@ h2 {
   gap: 1.25rem;
 }
 
+.section {
+    padding: 1.5rem;
+  }
+
 .project-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--panel-border);
@@ -352,11 +356,6 @@ h2 {
   .nav-links {
     gap: 0.75rem;
     font-size: 0.85rem;
-  }
-
-  .hero-photo {
-    width: 140px;
-    height: 140px;
   }
 
   .section {
