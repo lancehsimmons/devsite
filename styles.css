@@ -165,7 +165,7 @@ body.content-hidden .site-footer {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -200,24 +200,6 @@ main {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-}
-
-.hero-photo-arc {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 240px;
-  height: 240px;
-  pointer-events: none;
-  transform: rotate(-30deg);
-}
-
-.hero-photo-arc text {
-  fill: var(--text-primary);
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
 }
 
 .hero-text {
@@ -255,6 +237,12 @@ main {
 h2 {
   margin-top: 0;
   font-size: 1.5rem;
+}
+
+.about a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .tag-list {
@@ -320,7 +308,7 @@ h2 {
 }
 
 .section {
-    padding: 1.5rem;
+    padding: 0rem 1.5rem;
   }
 
 .project-card {
