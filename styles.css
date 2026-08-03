@@ -241,6 +241,14 @@ main {
 .link-icon {
   height: 3em;
   vertical-align: middle;
+  border-radius: 6px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.2s ease;
+}
+
+.hero-links a:hover .link-icon {
+  outline-color: var(--accent);
 }
 
 h2 {
@@ -318,6 +326,13 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .section {
