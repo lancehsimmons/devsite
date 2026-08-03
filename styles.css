@@ -139,7 +139,7 @@ body.content-hidden .site-footer {
 .brand {
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   text-decoration: none;
 }
 
@@ -226,6 +226,9 @@ main {
 }
 
 .hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--accent);
   text-decoration: none;
   font-size: 0.95rem;
@@ -233,6 +236,11 @@ main {
 
 .hero-links a:hover {
   text-decoration: underline;
+}
+
+.link-icon {
+  height: 3em;
+  vertical-align: middle;
 }
 
 h2 {
@@ -249,10 +257,6 @@ h2 {
 #about .section {
   padding: 0rem 1rem 1rem 1rem;
 }
-
-/* #about p {
-  margin: 0;
-} */
 
 .tag-list {
   list-style: none;
