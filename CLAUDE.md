@@ -79,3 +79,32 @@ Open `index.html` directly in a browser, or serve via
 - Mobile-width layout stays usable and animation stays performant
 - OS "reduce motion" setting falls back to a static/non-animated background
 - No console errors if WebGL/Hydra fails to load (gradient fallback shows)
+
+## Deployment (GitHub Pages + custom domain)
+
+Site deploys via GitHub Pages — no build step needed, it serves the repo
+contents directly.
+
+1. Push this repo to GitHub.
+2. In repo Settings → Pages, set source to the `main` branch, root folder.
+3. Add a `CNAME` file at the repo root containing the custom domain (e.g.
+   `yourname.com`) — GitHub Pages reads this automatically.
+4. At the domain registrar, point DNS at GitHub:
+   - Apex domain (`yourname.com`): four `A` records to
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+     `185.199.111.153`
+   - `www` subdomain: `CNAME` record to `<username>.github.io`
+5. Back in Settings → Pages, enter the custom domain and enable "Enforce
+   HTTPS" once DNS propagates (minutes to ~24h).
+
+Path constraints this imposes on the code:
+
+- All asset/script references (`assets/...`, `styles.css`,
+  `script-custom.js`) must stay relative — no leading `/` — since the site
+  may also be briefly reachable at `username.github.io/repo` before DNS
+  cuts over.
+- GitHub Pages' filesystem is case-sensitive (unlike macOS by default), so
+  asset filenames must match their references' case exactly.
+- `assets/resume.pdf` is referenced from the hero and contact sections but
+  is not yet present in `assets/` — must be added before deploy or those
+  links 404.
