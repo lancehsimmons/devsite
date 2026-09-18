@@ -14,13 +14,42 @@ React, Next, or even a static site generator like Astro. Deploys anywhere
 
 ```
 devsite/
-  index.html
-  styles.css
-  script.js
+  index.html          minimal landing page — photo, contacts, links to the two variants
+  engnr/index.html    software engineering version
+  sprt/index.html     technical support engineering version
+  styles.css          shared by all three pages
+  script-custom.js    shared — Hydra background init + sketch
+  ui-controls.js      shared — gaze toggle, opacity/morph sliders
   assets/
-    resume.pdf     (placeholder — real file dropped in later)
-    favicon.ico     (optional)
+    resume-engnr.pdf  linked from /engnr/
+    resume-sprt.pdf   linked from /sprt/
+    resume.pdf        original, kept for reference
+    favicon.ico       (optional)
 ```
+
+## Role variants
+
+The site serves two audience-specific versions of the same resume from one
+repo, as paths rather than subdomains. GitHub Pages allows only one custom
+domain per repository (that is what `CNAME` is), so `engnr.lancesimmons.fyi`
+and `sprt.lancesimmons.fyi` would require two additional repos, two more DNS
+records, two more certs, and three hand-synced copies of `styles.css`,
+`script-custom.js`, and `assets/`. Paths avoid all of that.
+
+- Root `index.html` is deliberately sparse: photo, a contact line, and
+  email/GitHub icons. No bio, no portfolio, no resume link — and no links
+  to the variants: `/engnr/` and `/sprt/` are reachable only by direct URL,
+  so each is handed out deliberately rather than browsed to.
+- `engnr/` and `sprt/` share the same layout and differ in tagline, About
+  copy, `<title>`/meta, and which resume PDF they link. The portfolio cards
+  are identical on both pages.
+- Both variants link their brand/heading back to `../` (the landing page).
+  They do not cross-link to each other, and nothing links forward into them.
+- When editing shared chrome (header controls, footer, background), change
+  `styles.css` / `ui-controls.js` / `script-custom.js` once; when editing
+  copy, remember there are two HTML files to keep in sync.
+- Each variant sets its own `og:url` (`https://lancesimmons.fyi/engnr/`,
+  `.../sprt/`) so link previews are correct per version.
 
 ## Hydra background
 
@@ -102,9 +131,11 @@ Path constraints this imposes on the code:
 - All asset/script references (`assets/...`, `styles.css`,
   `script-custom.js`) must stay relative — no leading `/` — since the site
   may also be briefly reachable at `username.github.io/repo` before DNS
-  cuts over.
+  cuts over. Pages inside `engnr/` and `sprt/` are one level deeper, so they
+  reference shared files as `../styles.css`, `../assets/...`, etc.
 - GitHub Pages' filesystem is case-sensitive (unlike macOS by default), so
   asset filenames must match their references' case exactly.
-- `assets/resume.pdf` is referenced from the hero and contact sections but
-  is not yet present in `assets/` — must be added before deploy or those
-  links 404.
+- `assets/resume-engnr.pdf` and `assets/resume-sprt.pdf` are each referenced
+  from their variant's hero and contact sections. Both currently hold a copy
+  of the original `resume.pdf` as a placeholder — replace them with the real
+  role-targeted resumes before deploy.
