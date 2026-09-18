@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lance Simmons — Software Engineer</title>
-  <meta name="description" content="Portfolio and resume for Lance Simmons, Software Engineer." />
+  <title>Lance Simmons</title>
+  <meta name="description" content="Lance Simmons — software engineering and technical support engineering." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Lance Simmons — Software Engineer" />
-  <meta property="og:description" content="Portfolio and resume for Lance Simmons, Software Engineer." />
+  <meta property="og:title" content="Lance Simmons" />
+  <meta property="og:description" content="Lance Simmons — software engineering and technical support engineering." />
   <meta property="og:url" content="https://lancesimmons.fyi/" />
   <meta property="og:image" content="https://lancesimmons.fyi/assets/profile.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -21,7 +21,7 @@
   <header class="site-header">
     <nav class="nav">
       <div role="heading" aria-level="1">
-        <a class="brand" href="#hero">Hi, I'm Lance</a>
+        <a class="brand" href="./">Hi, I'm Lance</a>
       </div>
       <div class="nav-right">
         <div class="display-controls">
@@ -60,86 +60,27 @@
   </header>
 
   <main>
-    <section id="hero" class="section hero">
-      <div class="hero-content">
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
-        </div>
-        <div class="hero-text">
-          <p class="tagline">I’m a full-stack software engineer who enjoys seeing a project all the way through, connecting the dots from server architecture to client mechanics and into visual design. I’m both a technical and creative individual. I find joy in the full range of my work, from experimentation to method. As a strong written and verbal communicator I'm particularly enthusiastic about the possibilities unlocked by generative AI.
-          </p>
-          <div class="hero-links">
-            <a href="mailto:lancehowardsimmons@gmail.com" >
-              <img class="link-icon" src="assets/email_blue.png" alt="email lancehowardsimmons@gmail.com"/>
-            </a>
-            <a href="https://github.com/lancehsimmons" target="_blank" rel="noopener">
-              <img class="link-icon" src="assets/github_blue.png" alt="Github" />
-            </a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">
-              <img class="link-icon" src="assets/resume_blue.png" alt="Resume" />
-            </a>
-          </div>
-        </div>
+    <section class="section landing">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
       </div>
-    </section>
 
-    <section id="about" class="section">
-      <p>Most recently I worked as an implementation developer in accessibility remediaton. Previously I was quality control and technical support for fMRI research hardware and software.</p>
-      <p>Alongside my professional work I have a creative practice that centers on sound and music mostly through the synthesis coding platform <a class="about" href="https://supercollider.github.io/" target="_blank" rel="noopener">Supercollider</a>.</p>
-      <p>I'm an avid hiker and reader of science fiction.</p>
-    </section>
+      <p class="landing-intro">I'm currently seeking new professional opportunities with the right team. Please get in touch:</p>
 
-    <section id="projects" class="section">
-      <h2>Portfolio</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Shrug Private Press</h3>
-          <img src="assets/shrug-thumbnail2.png" class="project-img"/>
-          <p>Publishing portal for experimental music</p>
-          <!-- <p class="project-tech">
-            <ul>
-              <li>React</li>
-              <li>Node.js + Express</li>
-              <li>Sqlite</li>
-              <li>Paypal REST API</li>
-            </ul>
-          </p> -->
-          <div>
-            <a href="https://shrug.wtf/" target="_blank" rel="noopener" aria-label="View Prject - Shrug Private Pres">View project →</a>
-          </div>
-          <div>
-            <a href="https://github.com/lancehsimmons/shrug-react" target="_blank" rel="noopener" aria-label="View Project Github - Shrug Private Press">View project github →</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <h3>Roast</h3>
-          <img src="assets/roast-thumbnail.png" class="project-img"/>
-          <p>Home Coffee Roasting Log</p>
-          <!-- <p class="project-tech">
-            <ul>
-              <li>React</li>
-              <li>Ruby on Rails</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </p> -->
-          <div>
-            <a href="https://roast-lancedev.surge.sh/sign-in" target="_blank" rel="noopener" aria-label="View Project - Roast">View project →</a>
-          </div>
-          <div>
-            <a href="https://github.com/lancehsimmons/Roast" target="_blank" rel="noopener" aria-label="View Project Github - Roast">View project github →</a>
-          </div>
-        </article>
+      <div class="landing-links">
+        <a href="mailto:lancehowardsimmons@gmail.com">
+          <img class="link-icon" src="assets/email_blue.png" alt="email lancehowardsimmons@gmail.com" />
+        </a>
+        <a href="https://github.com/lancehsimmons" target="_blank" rel="noopener">
+          <img class="link-icon" src="assets/github_blue.png" alt="Github" />
+        </a>
       </div>
-    </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>I'm currently seeking new professional opportunites with the right team. Please get in touch if you'd like to collaborate:</p>
-      <a class="contact-link" href="mailto:lancehowardsimmons@gmail.com" aria-label="email: lancehowardsimmons@gmail.com">Email</a>
-      <p>For more details on my background you can access my resume here:</p>
-      <a class="contact-link" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <nav class="landing-nav" aria-label="Choose a version of this site">
+        <a class="contact-link" href="engnr/">Software engineering →</a>
+        <a class="contact-link" href="sprt/">Technical support engineering →</a>
+      </nav>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -148,33 +89,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
   <script src="script-custom.js"></script>
-  <script>
-    (function () {
-      var toggleBtn = document.getElementById('content-toggle');
-      var opacitySlider = document.getElementById('overlay-opacity');
-      var morphSlider = document.getElementById('morph-speed');
-      var body = document.body;
-      var root = document.documentElement;
-
-      toggleBtn.addEventListener('click', function () {
-        var hidden = body.classList.toggle('content-hidden');
-        toggleBtn.textContent = hidden ? 'read' : 'gaze';
-        toggleBtn.setAttribute('aria-pressed', String(hidden));
-      });
-
-      opacitySlider.addEventListener('input', function () {
-        root.style.setProperty('--overlay-alpha', opacitySlider.value / 100);
-      });
-
-      morphSlider.addEventListener('input', function () {
-        // Quadratic curve: equal slider steps near the low end map to much
-        // smaller speed changes than steps near the high end, so most of the
-        // slider's travel is spent fine-tuning slow motion instead of being
-        // split evenly across the whole 0–1.2x range.
-        var t = morphSlider.value / 100;
-        window.speed = t * t * 1.2;
-      });
-    })();
-  </script>
+  <script src="ui-controls.js"></script>
 </body>
 </html>

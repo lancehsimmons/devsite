@@ -418,3 +418,50 @@ h2 {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------
+   Root landing page (index.html) — deliberately sparse: photo,
+   contact icons, and the two role-specific versions of the site
+   at /engnr/ and /sprt/.
+   --------------------------------------------------------------- */
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.landing-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.landing-links a:hover .link-icon {
+  outline-color: var(--accent);
+}
+
+.landing-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.landing-nav a {
+  text-decoration: none;
+}
+
+.landing-nav a:hover {
+  text-decoration: underline;
+}
+
+.landing-intro {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}

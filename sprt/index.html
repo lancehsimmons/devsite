@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lance Simmons — Technical Support Engineer</title>
+  <meta name="description" content="Portfolio and resume for Lance Simmons, technical support engineer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lance Simmons — Technical Support Engineer" />
+  <meta property="og:description" content="Portfolio and resume for Lance Simmons, technical support engineer." />
+  <meta property="og:url" content="https://lancesimmons.fyi/sprt/" />
+  <meta property="og:image" content="https://lancesimmons.fyi/assets/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://lancesimmons.fyi/assets/profile.jpg" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="hydra-bg" aria-hidden="true"></canvas>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div role="heading" aria-level="1">
+        <a class="brand" href="../">Hi, I'm Lance</a>
+      </div>
+      <div class="nav-right">
+        <div class="display-controls">
+          <button id="content-toggle" class="content-toggle" type="button" aria-pressed="false">
+            gaze
+          </button>
+          <label class="opacity-control">
+            <span>opacity</span>
+            <input
+              type="range"
+              id="overlay-opacity"
+              min="0"
+              max="90"
+              step="1"
+              value="55"
+              aria-label="Background overlay transparency"
+            />
+          </label>
+          <label class="opacity-control">
+            <span>morph</span>
+            <input
+              type="range"
+              id="morph-speed"
+              min="0"
+              max="100"
+              step="1"
+              value="91"
+              aria-label="Animation clock speed"
+            />
+          </label>
+
+          <span class="eyes-emoji" aria-hidden="true">👀</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="hero-content">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="../assets/profile.jpg" alt="Lance Simmons" width="200" height="200" />
+        </div>
+        <div class="hero-text">
+          <p class="tagline">I’m a support engineer with a full-stack background and fourteen years of support, debugging, and remediation experience. Skilled at tracing issues across server and client layers I resolve problems at the root. With an eye towards compassion for the user I’m a clear communicator who enjoys making technical details understandable. As a strong self-directed learner, I tackle new platforms, frameworks, and tools with passion.
+          </p>
+          <div class="hero-links">
+            <a href="mailto:lancehowardsimmons@gmail.com" >
+              <img class="link-icon" src="../assets/email_blue.png" alt="email lancehowardsimmons@gmail.com"/>
+            </a>
+            <a href="https://github.com/lancehsimmons" target="_blank" rel="noopener">
+              <img class="link-icon" src="../assets/github_blue.png" alt="Github" />
+            </a>
+            <a href="../assets/resume-sprt.pdf" target="_blank" rel="noopener">
+              <img class="link-icon" src="../assets/resume_blue.png" alt="Resume" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <p>Most recently I worked as an implementation developer in accessibility remediation, closing nearly 6,000 bugs for 370+ client sites across 1,793 pages. Previously I worked in quality control and technical support for fMRI research tools, troubleshooting issues that crossed the line between instrument, acquisition software, and the researchers using them. </p>
+      <p>Alongside my professional work I have a creative practice that centers on sound and music mostly through the synthesis coding platform <a class="about" href="https://supercollider.github.io/" target="_blank" rel="noopener">Supercollider</a>.</p>
+      <p>I'm an avid hiker and reader of science fiction.</p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Portfolio</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Shrug Private Press</h3>
+          <img src="../assets/shrug-thumbnail2.png" class="project-img"/>
+          <p>Publishing portal for experimental music</p>
+          <div>
+            <a href="https://shrug.wtf/" target="_blank" rel="noopener" aria-label="View Project - Shrug Private Press">View project →</a>
+          </div>
+          <div>
+            <a href="https://github.com/lancehsimmons/shrug-react" target="_blank" rel="noopener" aria-label="View Project Github - Shrug Private Press">View project github →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <h3>Roast</h3>
+          <img src="../assets/roast-thumbnail.png" class="project-img"/>
+          <p>Home Coffee Roasting Log</p>
+          <div>
+            <a href="https://roast-lancedev.surge.sh/sign-in" target="_blank" rel="noopener" aria-label="View Project - Roast">View project →</a>
+          </div>
+          <div>
+            <a href="https://github.com/lancehsimmons/Roast" target="_blank" rel="noopener" aria-label="View Project Github - Roast">View project github →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>I'm currently seeking new professional opportunities with the right team. Please get in touch if you'd like to talk:</p>
+      <a class="contact-link" href="mailto:lancehowardsimmons@gmail.com" aria-label="email: lancehowardsimmons@gmail.com">Email</a>
+      <p>For more details on my background you can access my resume here:</p>
+      <a class="contact-link" href="../assets/resume-sprt.pdf" target="_blank" rel="noopener">Resume</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Animation created with <a href="https://hydra.ojack.xyz/" target="_blank" rel="noopener">Hydra</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
+  <script src="../script-custom.js"></script>
+  <script src="../ui-controls.js"></script>
+</body>
+</html>
