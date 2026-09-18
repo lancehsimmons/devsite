@@ -36,14 +36,15 @@ and `sprt.lancesimmons.fyi` would require two additional repos, two more DNS
 records, two more certs, and three hand-synced copies of `styles.css`,
 `script-custom.js`, and `assets/`. Paths avoid all of that.
 
-- Root `index.html` is deliberately sparse: photo, email/GitHub icons, and a
-  link into each variant. No bio, no portfolio, no resume link.
+- Root `index.html` is deliberately sparse: photo, a contact line, and
+  email/GitHub icons. No bio, no portfolio, no resume link — and no links
+  to the variants: `/engnr/` and `/sprt/` are reachable only by direct URL,
+  so each is handed out deliberately rather than browsed to.
 - `engnr/` and `sprt/` share the same layout and differ in tagline, About
   copy, `<title>`/meta, and which resume PDF they link. The portfolio cards
   are identical on both pages.
 - Both variants link their brand/heading back to `../` (the landing page).
-  They do not cross-link to each other — the landing page is the only place
-  both versions appear together.
+  They do not cross-link to each other, and nothing links forward into them.
 - When editing shared chrome (header controls, footer, background), change
   `styles.css` / `ui-controls.js` / `script-custom.js` once; when editing
   copy, remember there are two HTML files to keep in sync.

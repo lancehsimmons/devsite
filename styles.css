@@ -444,21 +444,6 @@ h2 {
   outline-color: var(--accent);
 }
 
-.landing-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.landing-nav a {
-  text-decoration: none;
-}
-
-.landing-nav a:hover {
-  text-decoration: underline;
-}
-
 .landing-intro {
   max-width: 46ch;
   margin: 0;
