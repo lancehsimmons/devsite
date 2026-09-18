@@ -445,8 +445,20 @@ h2 {
 }
 
 .landing-intro {
-  max-width: 46ch;
   margin: 0;
   color: var(--text-primary);
   font-size: 1rem;
+}
+
+/* Each sentence gets its own line so the first never breaks mid-phrase.
+   Above the mobile breakpoint the container is wide enough to hold the
+   longer sentence outright; below it, each sentence wraps normally. */
+.landing-intro span {
+  display: block;
+}
+
+@media (min-width: 700px) {
+  .landing-intro span {
+    white-space: nowrap;
+  }
 }
