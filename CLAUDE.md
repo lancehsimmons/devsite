@@ -142,23 +142,32 @@ Confirm:
 
 No build step — Pages serves the branch contents directly.
 
-**Pages builds from the `main` branch, root folder.** Every push to `main`
-goes live — there is no staging step, so only push what is ready to publish.
+**Pages builds from the `production` branch, root folder — not `main`.**
+Commits pushed to `main` do not go live, so `main` is effectively a staging
+branch. To publish, push `main` straight to `production` — no checkout or
+merge:
+
+```
+git push origin main:production
+```
+
+(or `git deploy`, if the local alias
+`git config alias.deploy 'push origin main:production'` is set). This only
+fast-forwards, so `production` must never get commits that are not on
+`main`. If the push is rejected as non-fast-forward, run
+`git pull origin production` on `main`, push `main`, and deploy again.
 
 A build takes roughly 40–60s. Watch it in the repo's Actions tab under
 "pages build and deployment", at Settings → Pages, or with
 `gh run list --workflow pages-build-deployment`.
-
-The `production` branch is what Pages used to build from. It is kept but no
-longer deployed, and is not updated.
 
 Current configuration:
 
 - custom domain `lancesimmons.fyi`, HTTPS enforced; the cert covers the apex
   and `www`
 - `CNAME` at the repo root holds the domain. Changing the domain in
-  Settings → Pages makes GitHub commit that file directly to `main`, so pull
-  before pushing afterwards
+  Settings → Pages makes GitHub commit that file directly to `production`,
+  which is the usual cause of the non-fast-forward rejection above
 - DNS: apex → four `A` records (`185.199.108.153`, `185.199.109.153`,
   `185.199.110.153`, `185.199.111.153`); `www` → `CNAME` to
   `lancehsimmons.github.io`
